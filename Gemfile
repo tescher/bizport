@@ -8,7 +8,7 @@ gem 'pg'
 gem 'uglifier', '>= 1.3.0'
 gem 'therubyracer'
 
-gem 'foundation-rails', '~> 6.2.0'
+gem 'foundation-rails', '6.2.1.0'
 gem 'sass-rails'
 gem 'autoprefixer-rails'
 gem 'haml-rails', '~> 0.9'
@@ -18,6 +18,7 @@ gem 'jquery-rails'
 gem 'puma'
 
 gem 'devise'
+gem 'omniauth-facebook'
 gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin'
 
 gem 'sitemap_generator'
@@ -33,8 +34,9 @@ group :development, :test do
 end
 
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 3.0'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+
   gem 'capistrano', '3.4.0'
   gem 'capistrano-rbenv', '2.0.4'
   gem 'capistrano-rails', '1.1.6'
@@ -44,6 +46,7 @@ end
 group :test do
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'faker'
   gem 'database_cleaner'
   gem 'capybara'
   gem 'capybara-webkit'

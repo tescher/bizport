@@ -3,6 +3,19 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  def after_sign_in_path_for(user)
+    sign_in_url = new_user_session_url
+    if request.referer == sign_in_url
+      super
+    else
+      stored_location_for(user) || request.referer || root_path
+    end
+  end
+
+  def after_sign_out_path_for(user)
+    stored_location_for(user) || request.referer || root_path
+  end
+
   include Comfy::CmsHelper
   # used in CMS "step" pages to set up "next page" links
   def next_step_page(component)

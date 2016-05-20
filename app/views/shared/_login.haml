@@ -1,0 +1,4 @@
+#loginModal.reveal.tiny{ "aria-haspopup" => true, "aria-controls" => "loginModal", "data-reveal" => true }
+  %button.close-button{"aria-label" => "Close login modal", "data-close" => "", :type => "button"}
+  %span{"aria-hidden" => "true"} &times;
+  = render 'devise/sessions/form'
