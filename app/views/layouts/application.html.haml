@@ -30,6 +30,8 @@
             %li
               %a{ href: root_path } Home
             %li
+              %a.search-drawer-open-button Search
+            %li
               %a{ href: survey_path } Survey
             %li
               %a{ href: checklist_path } My Checklist
@@ -62,6 +64,26 @@
                 %a{ href: resources_path } Resources
               %li
                 %a{ href: contact_path } Contact
+              %li
+                %a.search-drawer-open-button Search
+        .search-drawer
+          .search-drawer-content
+            %button.search-drawer-close-button{:title => "Close Search"}
+            .search-box-container
+              :javascript
+                $('.search-drawer-open-button, .search-drawer-close-button').click(function () {
+                  $('.search-drawer').toggleClass('open');
+                });
+                (function() {
+                  var cx = '003180083737835708997:hehme1kabdk';
+                  var gcse = document.createElement('script');
+                  gcse.type = 'text/javascript';
+                  gcse.async = true;
+                  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                  var s = document.getElementsByTagName('script')[0];
+                  s.parentNode.insertBefore(gcse, s);
+                })();
+              %gcse:search
           .top-bar-right
         / original content goes in this container
         .off-canvas-content{"data-off-canvas-content" => true}

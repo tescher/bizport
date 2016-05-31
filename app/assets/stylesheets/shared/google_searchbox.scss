@@ -1,0 +1,41 @@
+.search-drawer {
+  background-color: white;
+  display: none;
+
+  &.open {
+    display: block;
+  }
+}
+
+.search-drawer-open-button,
+.search-drawer-close-button {
+  float: right;
+  width: 10px;
+
+}
+
+.search-drawer-close-button:after {
+  position: absolute;
+  top: 0;
+  content: '\d7'; /* hex value for cross-mark character */
+  font-size: 50px;
+  font-weight: 400;
+  color: $white;
+  text-align: center;
+}
+
+.search-box-container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+
+// these are mostly overrides, so lots of ugly !important decs involved
+
+.gsc-control-cse * {
+  line-height: initial;
+  font-size: initial;
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
+}
